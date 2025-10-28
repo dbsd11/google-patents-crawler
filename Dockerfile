@@ -29,4 +29,4 @@ USER mcpuser
 EXPOSE 18080
 
 # 启动脚本
-CMD ["/app/set_chromedriver_env.sh", "python", "start_mcp_server.py", "--host", "0.0.0.0", "--port", "18080", "--transport", "sse"]
+CMD ["python", "start_mcp_server.py", "--host", "0.0.0.0", "--port", "18080", "--transport", "sse"]
