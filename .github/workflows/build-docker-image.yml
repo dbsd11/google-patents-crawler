@@ -32,7 +32,7 @@ on:
       - 'v*'
 
 env:
-  REGISTRY: registry.cn-hangzhou.aliyuncs.com
+  REGISTRY: registry.us-east-1.aliyuncs.com
   IMAGE_NAME: google-patents-mcp
 
 jobs:
