@@ -36,7 +36,7 @@ services:
         timeout: 7200
         caPort: 18080
         customContainerConfig: 
-          image: "registry.us-east-1.aliyuncs.com/dbsnolimit/google-patents-crawler:latest"
+          image: "registry.us-east-1.aliyuncs.com/dbsnolimit/google-patents-mcp:latest"
         customHealthCheckConfig:
           failureThreshold: 6
           httpGetUrl: /
