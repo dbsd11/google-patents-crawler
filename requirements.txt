@@ -1,0 +1,28 @@
+# MCP Server for Google Patents Crawler
+# Core MCP dependencies
+mcp>=1.0.0
+
+# Web scraping and browser automation
+selenium>=4.15.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# HTTP requests and URL handling
+requests>=2.31.0
+urllib3>=2.0.0
+
+# Async support
+asyncio-mqtt>=0.16.0
+
+# Logging and utilities
+python-dotenv>=1.0.0
+
+# Optional: For better HTML parsing performance
+html5lib>=1.1
+
+# Web 服务器支持 (用于 SSE 传输)
+uvicorn>=0.24.0
+fastapi>=0.104.0
+
+# WebSocket 支持
+websockets>=12.0

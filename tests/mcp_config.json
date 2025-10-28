@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "google-patents-crawler": {
+      "command": "python",
+      "args": ["mcp_server.py"],
+      "transport": "stdio",
+      "description": "Google专利搜索MCP服务器，支持通过关键字搜索专利信息"
+    },
+    "google-patents-crawler-sse": {
+      "url": "http://localhost:8080/sse",
+      "transport": "sse",
+      "description": "Google专利搜索MCP服务器 (SSE传输方式)"
+    }
+  }
+}
