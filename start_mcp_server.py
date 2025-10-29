@@ -116,6 +116,11 @@ def main():
         # FastAPI 应用
         app = FastAPI(title="Google Patents Crawler MCP Server", debug=True)
 
+        @app.get("/")
+        async def health_check():
+            """健康检查端点，用于心跳检查"""
+            return {"status": "ok", "service": "Google Patents Crawler MCP Server", "transport": "sse"}
+
         @app.get("/sse")
         async def sse_endpoint(request: Request):
             """SSE 端点"""
