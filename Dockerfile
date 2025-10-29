@@ -20,9 +20,7 @@ ENV CHROMEDRIVER_PATH=/usr/bin/chromedriver
 # 安装 Python 依赖
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 创建非 root 用户
-RUN useradd -m -u 1000 mcpuser && chown -R mcpuser:mcpuser /app
-USER mcpuser
+USER root
 
 # 暴露端口
 # SSE 端口
