@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y \
 
 ENV CHROMEDRIVER_PATH=/usr/bin/chromedriver-linux64/chromedriver
 
-# 安装 Python 依赖
+# 安装 Python 依赖chromedriver
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 使用 root 用户
