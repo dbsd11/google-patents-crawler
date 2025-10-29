@@ -13,7 +13,23 @@ ENV PYTHONUNBUFFERED=1
 # 复制项目文件
 COPY . .
 
-RUN sh install_chrome_driver.sh
+# RUN sh install_chrome_driver.sh
+
+# todo 安装chrome和chromedriver
+# https://storage.googleapis.com/chrome-for-testing-public/142.0.7444.59/linux64/chrome-linux64.zip
+# https://storage.googleapis.com/chrome-for-testing-public/142.0.7444.59/linux64/chromedriver-linux64.zip
+
+# 安装 Chrome 和 Chromedriver
+RUN apt-get update && apt-get install -y \
+    wget \
+    unzip \
+    && wget https://storage.googleapis.com/chrome-for-testing-public/142.0.7444.59/linux64/chrome-linux64.zip \
+    && wget https://storage.googleapis.com/chrome-for-testing-public/142.0.7444.59/linux64/chromedriver-linux64.zip \
+    && unzip chrome-linux64.zip -d /usr/bin \
+    && unzip chromedriver-linux64.zip -d /usr/bin \
+    && rm chrome-linux64.zip chromedriver-linux64.zip \
+    && apt-get remove -y wget unzip \
+    && apt-get autoremove -y
 
 ENV CHROMEDRIVER_PATH=/usr/bin/chromedriver
 
