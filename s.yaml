@@ -38,7 +38,7 @@ services:
         customContainerConfig: 
           image: "registry.us-east-1.aliyuncs.com/dbsnolimit/google-patents-mcp:latest"
           command: '["python"]'
-          args: '["-m", "http.server", ""18080]'
+          args: '["-m", "http.server", "18080"]'
         customHealthCheckConfig:
           failureThreshold: 6
           httpGetUrl: /
