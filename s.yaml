@@ -37,8 +37,8 @@ services:
         caPort: 18080
         customContainerConfig: 
           image: "registry.us-east-1.aliyuncs.com/dbsnolimit/google-patents-mcp:latest"
-          command: ["tail"]
-          args: ["-f", "/dev/null"]
+          command: "['tail']"
+          args: "['-f', '/dev/null']"
         customHealthCheckConfig:
           failureThreshold: 6
           httpGetUrl: /
