@@ -23,6 +23,7 @@ COPY . .
 RUN apt-get update && apt-get install -y \
     wget \
     unzip \
+    libnss3 libnspr4 libdbus-1-3 libatk1.0.0 libatk-bridge2.0 libcups2 libxkbcommon0 libx11-6 libxcomposite1 libxcursor1 libxdamage1 libxrandr2 libgbm1 libasound2 \
     && wget https://storage.googleapis.com/chrome-for-testing-public/142.0.7444.59/linux64/chrome-linux64.zip \
     && wget https://storage.googleapis.com/chrome-for-testing-public/142.0.7444.59/linux64/chromedriver-linux64.zip \
     && unzip chrome-linux64.zip -d /usr/bin \
@@ -31,11 +32,12 @@ RUN apt-get update && apt-get install -y \
     && apt-get remove -y wget unzip \
     && apt-get autoremove -y
 
-ENV CHROMEDRIVER_PATH=/usr/bin/chromedriver
+ENV CHROMEDRIVER_PATH=/usr/bin/chromedriver-linux64/chromedriver
 
 # 安装 Python 依赖
 RUN pip install --no-cache-dir -r requirements.txt
 
+# 使用 root 用户
 USER root
 
 # 暴露端口
@@ -43,4 +45,4 @@ USER root
 EXPOSE 18080
 
 # 启动脚本
-CMD ["python", "start_mcp_server.py", "--host", "0.0.0.0", "--port", "18080", "--transport", "sse"]
+CMD ["/bin/bash", "start.sh"]
