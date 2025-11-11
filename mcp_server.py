@@ -222,7 +222,7 @@ class GooglePatentsCrawler:
             )
             # About 29,110 results
             total_num_results_str = numResultsLabel[0].text.strip()
-            total_num_results = int(total_num_results_str.split()[1].replace(',', ''))
+            total_num_results = int(total_num_results_str.split()[-2].replace(',', ''))
             
             # 获取页面HTML内容
             html_content = self.driver.page_source
