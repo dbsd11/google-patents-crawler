@@ -56,13 +56,10 @@ class GooglePatentsCrawler:
             
         Returns:
             完整的搜索URL
-        """
-        # URL编码关键词
-        encoded_keywords = urllib.parse.quote(keywords)
-        
+        """        
         # 构建查询参数
         params = {
-            'q': encoded_keywords,
+            'q': keywords,
             'num': str(page_size),
             'page': str(page),
             'country': 'CN',
